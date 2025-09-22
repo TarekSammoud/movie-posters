@@ -18,7 +18,7 @@ class MovieViewModel(val omdbRepository: OmdbRepository) : ViewModel(){
     fun fetchMovie(title : String){
         viewModelScope.launch{
             try{
-                val omdbMovie = omdbRepository.fetchMovie(title, "1dd589a1")
+                val omdbMovie = omdbRepository.fetchMovie(title, "")
                 _movie.value = omdbMovie
             }
             catch(e : Exception) {
